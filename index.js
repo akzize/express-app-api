@@ -6,7 +6,8 @@ const app = express();
 
 // mongo init
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27000/school");
+mongoose.connect("mongodb://mongo:27017/school");
+// mongoose.connect(process.env.MONGO_LINK);
 
 const db = mongoose.connection;
 
