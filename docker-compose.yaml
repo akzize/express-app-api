@@ -6,7 +6,7 @@ services:
         volumes:
             - ./data:/data/db
         ports:
-            - "27010:27017"
+            - 27018:27017
         networks:
             - express
     register-app:
@@ -14,7 +14,7 @@ services:
         image: expressapi
         build: .
         ports:
-            - 4005:8000
+            - 4005:4000
         networks:
             - express
         depends_on:

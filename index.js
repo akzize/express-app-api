@@ -6,8 +6,9 @@ const app = express();
 
 // mongo init
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://mongo:27017/school");
-// mongoose.connect(process.env.MONGO_LINK);
+// the name of the container
+mongoose.connect("mongodb://mongo:27018/school");
+// mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 
@@ -31,7 +32,7 @@ app.get("/", (req, res) => {
 app.use("/etudiants", etudiantRouter);
 
 // The port
-const port = process.env.PORT || 4001;
+const port = process.env.PORT || 4000;
 
 // The server init
 app.listen(port, () => {
